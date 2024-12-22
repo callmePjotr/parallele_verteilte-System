@@ -1,0 +1,30 @@
+Moin,
+
+ich habe da noch ein bisschen dran weitergearbeitet und habe mich mit Tim ausgetauscht. Der hat nämlich statt einer einfachen Multiplikation eine Matrix Multiplikation verwendet. Ich habe dann meine Version (cpp) etwas angepasst und seine ausprobiert und komme dabei auf realistische Ergebnisse. 
+
+Beides ist auf meinem Desktop-PC entstanden (AMD Ryzen 7, siehe vorherige Mail)
+C-Programm (benchmark.c)
+Matrixgröße: 1000x1000
+Elapsed Time: 2.514000 seconds
+GFLOPS (REAL(64)): 0.80
+
+CPP-Programm (mit  vector, benchmark.cpp)
+Matrixgröße: 1000x1000
+Elapsed Time: 7.11224 seconds
+GFLOPS (REAL(64)): 0.281205
+
+Mit Python (benchmark_double_precision.py)
+Matrixgröße: 20000x20000
+Elapsed Time: 43.600441 seconds
+GFLOPS (REAL(64)): 366.97
+
+In weiterer Zusammenarbeit mit Tim sind dann auch die folgenden Client und Server Beispiele für 1.2.2 entstanden. Jedoch konnte ich diese nicht auf meinem Desktop Pc ausführen. Ich habe mir dann zwar eine gcc Version für Windows installiert, jedoch musste ich das Skript Windows konform anpassen, was aber auch für unsere verwendeten Bibliotheken bedeutet ein paar Bibliotheken nachzuinstallieren. Ich halte meinen Hauptrechner jedoch gerne sauber. Falls das dennoch gewünscht ist, kann ich die Ergebnisse gerne nachreichen. Deswegen habe ich die Skripte für 1.2.2 auf der altbekannten Kali Maschine ausgeführt.
+Darauf schalte ich mich immer mit ssh, deswegen sind die Ergebnisse ein wenig von Latenz gezeichnet.
+
+(client_rtt.c, client_tr.c, server_rtt.c) - also wieder der i7, glaube 8. Generation
+
+eui@Forensik-Kali:~/PVS/PVS_Client_Server$ ./client_rtt
+Round Trip Time (RTT): 80653 nanoseconds
+
+eui@Forensik-Kali:~/PVS/PVS_Client_Server$ ./client_tr
+Transfer Rate: 1462577604.45 bytes per second
